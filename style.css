@@ -5,7 +5,15 @@
       font-family: "Poppins", sans-serif;
       margin: 0;
       padding: 0;
-    }
+      
+  max-width: 100%;
+  overflow-x: hidden;
+
+
+
+  overflow-x: hidden;
+}
+
 
     .navbar {
       font-size: 1rem;
@@ -16,6 +24,9 @@
       height: 150px;
       width: 300px;
     }
+   .navbar-brand {
+  margin-left: 0 !important;
+}
 
     .nav-link {
       position: relative;
@@ -255,9 +266,8 @@ color: #f8f6f3;
 
 
 .newsletter {
-  margin: 30px auto;
-width: 450px;
-  margin-right: 20px;
+  width: 100%;
+  max-width: 450px;
 }
  
 .newsletter-form {
@@ -293,6 +303,14 @@ width: 450px;
   font-family: Arial, sans-serif;
   color: #191a1b;
 }
+
+@media (max-width: 767px) {
+  .footer-logo img {
+    width: 200px;
+    height: auto;
+  }
+}
+
 .footer-title {
   position: relative;
   display: inline-block;
@@ -391,12 +409,6 @@ width: 450px;
   height: 30px;
 
   box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
-}
-
-.footer-contact i a:hover {
-  background-color: #003399;
-  color: #fff;
-  transition: all 0.3s ease;
 }
 
 .footer-title {
