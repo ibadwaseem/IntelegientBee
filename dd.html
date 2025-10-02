@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services Tabs</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 20px 0;
+    }
+    h2 span {
+      color: #faac37;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .tab-btn {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid #ddd;
+      background: #fff;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    .tab-btn.active {
+      background: #faac37;
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* Content */
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    .tab-content.active {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      width: 220px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+    }
+    .service-card img {
+      max-width: 60px;
+      margin-bottom: 10px;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @media (max-width: 767px) {
+      .service-card {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Services at IntelligentBee: <span>Buzzworthy Brilliance!</span></h2>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="tab1">Customer Support</button>
+    <button class="tab-btn" data-tab="tab2">BPO Services</button>
+    <button class="tab-btn" data-tab="tab3">Omnichannel</button>
+    <button class="tab-btn" data-tab="tab4">Software Development</button>
+  </div>
+
+  <!-- Tab Content -->
+  <div id="tab1" class="tab-content active">
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/942/942751.png" alt="">
+      <h4>Live Chat</h4>
+      <p>24/7 support to customers through chat.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/3050/3050525.png" alt="">
+      <h4>Email Support</h4>
+      <p>Professional assistance through emails.</p>
+    </div>
+  </div>
+
+  <div id="tab2" class="tab-content">
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" alt="">
+      <h4>Back Office Outsourcing</h4>
+      <p>Efficient handling of non-core tasks.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png" alt="">
+      <h4>Data Entry & Cleaning</h4>
+      <p>Accurate data management solutions.</p>
+    </div>
+  </div>
+
+  <div id="tab3" class="tab-content">
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png" alt="">
+      <h4>Omnichannel Strategy</h4>
+      <p>Unified experience across all platforms.</p>
+    </div>
+  </div>
+
+  <div id="tab4" class="tab-content">
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1829/1829445.png" alt="">
+      <h4>Web Development</h4>
+      <p>Robust and scalable web solutions.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" alt="">
+      <h4>Custom Software</h4>
+      <p>Tailor-made apps for your business.</p>
+    </div>
+  </div>
+
+  <script>
+    const tabBtns = document.querySelectorAll(".tab-btn");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        // remove active
+        tabBtns.forEach(b => b.classList.remove("active"));
+        tabContents.forEach(c => c.classList.remove("active"));
+        // add active
+        btn.classList.add("active");
+        document.getElementById(btn.dataset.tab).classList.add("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
