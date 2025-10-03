@@ -1,4 +1,9 @@
 /*  */
+
+
+
+
+/*  */
    body {
       color: #080808;
       
@@ -12,6 +17,37 @@
 
 
   overflow-x: hidden;
+}
+
+
+
+.megamenu:hover .mega-menu-content {
+  display: block;
+  line-height: 2rem;
+}
+
+.mega-menu-content a {
+  color: #f8f6f3;
+  
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.mega-menu-content a:hover {
+  color: #faac37;
+}
+
+.mega-menu-content {
+  display: none;
+  position: absolute;
+  top: 75%;
+  left: 15px;
+  right: 150px;
+  height: 450px;     
+  width: 100%;
+  background: #1e1e1e; 
+  z-index: 9999;
+  padding: 0px 60px; 
 }
 
 
