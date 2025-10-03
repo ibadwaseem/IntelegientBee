@@ -1,5 +1,4 @@
 /*  */
-
 /*  */
 body {
   color: #080808;
@@ -14,6 +13,7 @@ body {
   display: block;
   line-height: 2rem;
 }
+
 .border-right {
   border-right: 1px solid rgba(248, 244, 244, 0.986);
   height: 400px;
@@ -40,7 +40,7 @@ body {
   width: 100%;
   background: #1e1e1e;
   z-index: 9999;
-  padding: 0px 60px;
+  padding: 0px 10px;
 }
 
 .navbar {
