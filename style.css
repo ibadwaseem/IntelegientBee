@@ -210,7 +210,122 @@
 
 
   /*  */
+  /*  */
 
+
+.ecommerce-section {
+  background:white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-gradient {
+  background: linear-gradient(90deg, #141414 10%, #faac37 90%);
+  color: white;
+  border: none;
+  padding: 10px 26px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-gradient:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.ecom-card {
+  height: 280px;
+  background-size: cover;
+  
+  position: relative;
+border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 18px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.ecom-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+.ecom-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.05));
+  z-index: 1;
+}
+
+.ecom-overlay.dark {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.1));
+}
+
+
+.ecom-card-text {
+  position: relative;
+  z-index: 2;
+  line-height: 1.4;
+}
+
+.ecom-card .btn-learn {
+  position: relative;
+  z-index: 2;
+  margin-top: 12px;
+  background:#faac37;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  font-size: 14px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Show button on hover */
+.ecom-card:hover .btn-learn {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ecom-card.active .btn-learn {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Text muted */
+.text-muted {
+  font-size: small;
+  color: #fcfcfc;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .ecom-card {
+    height: 220px;
+    font-size: 16px;
+    padding: 15px;
+  }
+  .btn-gradient {
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+}
+
+
+
+
+  /*  */
   /*  */
 
   .info-block, .content-block {
