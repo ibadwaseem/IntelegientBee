@@ -1,5 +1,25 @@
 /*  */
+
 /*  */
+
+    h2 span.char {
+      display: inline-block;
+      transform: translateY(100px);
+      opacity: 0;
+      background: linear-gradient(90deg, #faac37, #ffd776, #faac37);
+      background-size: 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s infinite linear;
+    }
+
+    @keyframes glow {
+      0% { background-position: 0%; }
+      100% { background-position: 200%; }
+    }
+
+
+
 body {
   color: #080808;
   font-family: "Poppins", sans-serif;

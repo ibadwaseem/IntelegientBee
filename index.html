@@ -20,9 +20,13 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+
 <link rel="stylesheet" href="/style.css">
 
-  <title>The IntelligentBee </title>
+  <title>Outsource IT Projects </title>
     <link rel="icon" type="image/x-icon" href="https://intelligentbee.com/build/images/intelligentbee-logo.svg">
 
 </head>
@@ -46,10 +50,57 @@
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
       <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
-        <li class="nav-item px-3"><a class="nav-link text-white" href="#">Customer Support</a></li>
+        <li class="nav-item px-3 megamenu">
+          <a class="nav-link text-white" href="#">Customer Support & BPO</a>
+        <div class="mega-menu-content p-4">
+            <div class="row">
+              <div class="col-md-4">
+                <h2 class="fw-bold text-white border-right">Our Services</h2>
+              </div>
+              <div class="col-md-4">
+                <h6 class="fw-bold text-white g-5 mt-2">Customer Development Service</h6>
+                <ul class="list-unstyled mt-4">
+                  <li><a href="#">Outsourcing customer support</a></li>
+                  <li><a href="#">E-commerce Customer Support Services</a></li>
+                  <li><a href="#">Technical Support Services
+</a></li>
+                  <li><a href="#">Customer Support for Healthcare
+</a></li>
+                  <li><a href="#">FinTech customer service
+</a></li>
+                  <li><a href="#">SaaS customer support </a></li>
+<!--                   
+                  <li><a href="#">Front-end Development</a></li>
+                  <li><a href="#">Back-end Development</a></li>
+                  <li><a href="#">iOS app Development</a></li>
+                  <li><a href="#">Android app Development</a></li> -->
+                </ul>
+              </div>
+              <div class="col-md-2">
+                <h6 class="fw-bold text-white g-5 mt-2">Omnichannel
+
+
+
+</h6>
+                <ul class="list-unstyled mt-4">
+                  <li><a href="#">Live chat
+</a></li>
+                  <li><a href="#">Email</a></li>
+                  <li><a href="#">Phone</a></li>
+                  <li><a href="#">Social Media</a></li>
+                  <!-- <li><a href="#">React.js Development</a></li>
+                  <li><a href="#">Golang Development</a></li>
+                  <li><a href="#">Symfony Development</a></li> -->
+
+                </ul>
+              </div>
+              
+            </div>
+          </div>
+        </li>
         
         <li class="nav-item px-3 megamenu">
-          <a class="nav-link text-white" href="#">Development</a>
+          <a class="nav-link text-white" href="#">Development Services</a>
           <div class="mega-menu-content p-4">
             <div class="row">
               <div class="col-md-4">
@@ -88,7 +139,8 @@
           </div>
         </li>
         
-        <li class="nav-item px-3"><a class="nav-link text-white" href="#">Case Study</a></li>
+        <li class="nav-item px-3">
+          <a class="nav-link text-white" href="#">Case Study</a></li>
         <li class="nav-item px-3"><a class="nav-link text-white" href="#">About Us</a></li>
         <li class="nav-item px-3"><a class="nav-link text-white" href="#">Blog</a></li>
         
@@ -105,17 +157,46 @@
   </div>
 </nav>
 
+<style>
+    
+
+
+ .py-5 h2 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.1;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-align: left;
+    }
+
+    .char {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(60px);
+      will-change: transform, opacity;
+    }
+
+    .Reliable {
+      color: #ffffff;
+    }
+
+    
+
+ 
+  </style>
+
+
   <!-- Hero Section -->
   <section class="py-5">
     <div class="container">
       <div class="row align-items-center">
           <div class="col-md-8">
-              <h2 class="fw-bold" style="font-size: 50px; line-height: 1 ;color: #fdfdfc">
-                  RELIABLE <br />
-                  <span class="fw-bolder" style="color: #faac37">OUTSOURCING</span>
-                  <br />
-                  SOLUTIONS
-              </h2>
+             <!-- Heading to Animate -->
+         <h2 id="animated-heading">
+        <span class="Reliable" >RELIABLE</span><br />
+        <span class="orange">OUTSOURCING</span><br />
+        <span class="Reliable">SOLUTIONS</span>
+         </h2>
               
               <p class="mt-3" style="color:#faac37; font-size: 1.7rem;">
                 Facing business growth challenges? Our offshore outsourcing solutions offer efficient, innovative support and development services.
@@ -159,6 +240,40 @@
       </div>
     </div>
   </section>
+  
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const heading = document.getElementById("animated-heading");
+
+    // Split each word span into letters
+    heading.querySelectorAll("span").forEach(span => {
+      const text = span.textContent;
+      span.textContent = "";
+      text.split("").forEach(char => {
+        const letter = document.createElement("span");
+        letter.textContent = char;
+        letter.classList.add("char");
+        if (span.classList.contains("orange")) letter.classList.add("orange");
+        else letter.classList.add("white");
+        span.appendChild(letter);
+      });
+    });
+
+    // Animate each letter on scroll
+    gsap.to(".char", {
+      scrollTrigger: {
+        trigger: heading,
+        start: "top 80%",
+        toggleActions: "play",
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: "power3.out",
+      stagger: 0.03,
+    });
+  </script>
 
                          <!-- Stats Section -->
   
@@ -205,7 +320,7 @@
 
   
 <!-- Ecommerce Section -->
-<section class="ecommerce-section py-5">
+<section class="ecommerce-section py-2">
   <div class="container">
     <div class="row align-items-center">
 
@@ -464,7 +579,7 @@ font-family:sans-serif;
   });
 </script>
                                         <!-- Who We Are Section -->
-<section class="who-we-are py-5">
+<section class="who-we-are py-4">
   <div class="container">
     <div class="row align-items-center">
       
@@ -589,9 +704,7 @@ font-family:sans-serif;
 </script>
 
 
-
-
- <section class="accent-cta overlap-sections" data-aos="zoom-in">
+<section class="accent-cta overlap-sections" data-aos="zoom-in">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -607,6 +720,157 @@ font-family:sans-serif;
 </section>
 
 
+<style>
+  .services-list {
+    background: #141414;
+    color: #fdfdfc;
+    padding: 64px 0px 32px;
+  }
+
+  .services-list .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    
+  }
+
+  .services-list .service-block {
+    flex: 1 1 calc(16.66% - 20px);
+    margin: 10px;
+    padding: 10px 20px;
+    
+    min-width: 180px;
+  }
+
+  
+
+  .services-list h6 {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 0 16px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .services-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .services-list ul li {
+    margin-bottom: 8px;
+    margin: 0px 0px 10px;
+  }
+
+  .services-list ul li a {
+    color: #e0dede;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+  }
+
+  .services-list ul li a:hover {
+    color: #faac37;
+    padding-left: 5px;
+  }
+  
+
+  /* Responsive for tablet/mobile */
+  @media (max-width: 991px) {
+    .services-list .service-block {
+      flex: 1 1 calc(33.33% - 20px);
+      border-right: none;
+      border-bottom: 1px solid #2a2a2a;
+    }
+
+    .services-list .service-block:last-child {
+      border-bottom: none;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .services-list .service-block {
+      flex: 1 1 100%;
+      text-align: left;
+      border: none;
+      border-bottom: 1px solid #2a2a2a;
+    }
+  }
+</style>
+
+<section class="services-list">
+  <div class="container-fluid">
+    <div class="wrapper">
+      <div class="service-block">
+        <h6>Customer Support Services</h6>
+        <ul>
+          <li><a href="#">Outsourcing customer support</a></li>
+          <li><a href="#">E-commerce Customer Support</a></li>
+          <li><a href="#">Technical Support</a></li>
+          <li><a href="#">Customer Support for Healthcare</a></li>
+          <li><a href="#">FinTech Customer Service</a></li>
+          <li><a href="#">SaaS Customer Support</a></li>
+        </ul>
+      </div>
+
+      <div class="service-block">
+        <h6>BPO Services</h6>
+        <ul>
+          <li><a href="#">Back Office Outsourcing</a></li>
+          <li><a href="#">Data Entry Outsourcing</a></li>
+          <li><a href="#">Data Processing Services</a></li>
+          <li><a href="#">Image Data Entry</a></li>
+          <li><a href="#">Healthcare BPO</a></li>
+        </ul>
+      </div>
+
+      <div class="service-block">
+        <h6>Omnichannel</h6>
+        <ul>
+          <li><a href="#">Live Chat</a></li>
+          <li><a href="#">Email Support</a></li>
+          <li><a href="#">Phone Answering</a></li>
+          <li><a href="#">Social Media Support</a></li>
+        </ul>
+      </div>
+
+      <div class="service-block">
+        <h6>Development Services</h6>
+        <ul>
+          <li><a href="#">Custom Software Development</a></li>
+          <li><a href="#">Front-end Development</a></li>
+          <li><a href="#">Back-end Development</a></li>
+          <li><a href="#">iOS App Development</a></li>
+          <li><a href="#">Android App Development</a></li>
+          <li><a href="#">Custom AI Development</a></li>
+        </ul>
+      </div>
+
+      <div class="service-block">
+        <h6>Technologies</h6>
+        <ul>
+          <li><a href="#">Node.js</a></li>
+          <li><a href="#">Golang</a></li>
+          <li><a href="#">PHP</a></li>
+          <li><a href="#">Laravel</a></li>
+          <li><a href="#">Flutter</a></li>
+          <li><a href="#">React JS</a></li>
+        </ul>
+      </div>
+
+      <div class="service-block">
+        <h6>Industries</h6>
+        <ul>
+          <li><a href="#">Ecommerce</a></li>
+          <li><a href="#">Healthcare</a></li>
+          <li><a href="#">Tech Companies</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- <                 Main Points Section -->
 <footer class="footer">
