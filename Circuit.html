@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  rel="stylesheet"
+  />
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <title>Document</title>
+
+</head>
+<body>
+<div class="col-md-6 text-center">
+  <div class="tech-scene">
+    <div class="monitor">
+      <div class="screen">
+        <div class="code-lines"></div>
+        <div class="scan-line"></div>
+      </div>
+      <div class="stand"></div>
+    </div>
+    <div class="keyboard"></div>
+    <div class="mouse"></div>
+  </div>
+</div>
+<style>
+    body{
+        background: #000;
+    }
+    .tech-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
+  position: relative;
+}
+
+/* === Monitor === */
+.monitor {
+  width: 320px;
+  height: 180px;
+  background: linear-gradient(145deg, #0f0f0f, #1b1b1b);
+  border: 2px solid rgba(250, 172, 55, 0.6);
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 0 50px rgba(250, 172, 55, 0.2),
+              inset 0 0 15px rgba(250, 172, 55, 0.15);
+  overflow: hidden;
+  animation: float 3.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* === Screen === */
+.screen {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top left, #0b0b0b, #050505);
+  overflow: hidden;
+  position: relative;
+}
+
+/* === Code Lines Animation === */
+.code-lines {
+  position: absolute;
+  width: 100%;
+  height: 200%;
+  color: #faac37;
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 1.2;
+  opacity: 0.9;
+  text-shadow: 0 0 5px rgba(250, 172, 55, 0.8);
+  white-space: pre;
+  animation: scrollCode 6s linear infinite;
+}
+
+@keyframes scrollCode {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+
+/* === Scan Line === */
+.scan-line {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background: linear-gradient(to bottom, transparent, rgba(250, 172, 55, 0.25), transparent);
+  animation: scanMove 2.8s linear infinite;
+}
+
+@keyframes scanMove {
+  0% { top: -30%; }
+  100% { top: 120%; }
+}
+
+/* === Stand === */
+.stand {
+  width: 70px;
+  height: 25px;
+  background: #1a1a1a;
+  margin: 0 auto;
+  margin-top: -5px;
+  border-radius: 5px;
+  box-shadow: 0 5px 20px rgba(250, 172, 55, 0.25);
+}
+
+/* === Keyboard === */
+.keyboard {
+  width: 280px;
+  height: 30px;
+  background: linear-gradient(180deg, #1a1a1a, #0f0f0f);
+  margin-top: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(250, 172, 55, 0.25);
+  animation: keypress 2.5s infinite ease-in-out;
+}
+
+@keyframes keypress {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
+/* === Mouse === */
+.mouse {
+  width: 50px;
+  height: 70px;
+  background: linear-gradient(145deg, #faac37, #e49a2d);
+  border-radius: 30px;
+  margin-top: 15px;
+  box-shadow: 0 0 20px rgba(250, 172, 55, 0.35);
+  position: relative;
+  animation: click 2s infinite ease-in-out;
+}
+
+.mouse::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 18px;
+  background: #111;
+  border-radius: 2px;
+}
+
+@keyframes click {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+}
+</style>
+<script>
+  const codeElement = document.querySelector('.code-lines');
+  const chars = ['0','1','{','}','<','>','/','@','$','&','%','=','+'];
+  
+  function generateCodeLines() {
+    let lines = '';
+    for (let i = 0; i < 40; i++) {
+      let line = '';
+      for (let j = 0; j < 50; j++) {
+        line += chars[Math.floor(Math.random() * chars.length)];
+      }
+      lines += line + '\n';
+    }
+    codeElement.textContent = lines;
+  }
+  
+  generateCodeLines();
+  setInterval(generateCodeLines, 4000);
+</script>
+
+</body>
+</html>
