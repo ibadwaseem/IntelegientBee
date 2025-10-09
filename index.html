@@ -340,7 +340,7 @@
 
   
 <!-- Ecommerce Section -->
-<section class="ecommerce-section py-2">
+<section class="ecommerce-section py-2" data-aos="fade-up" data-aos-duration="1500">
   <div class="container">
     <div class="row align-items-center">
 
@@ -395,22 +395,20 @@
   </div>
 </section>
 
-
-
-
+<!-- Excellence Section -->
 <section class="excellence mt-5">
   <div class="container text-center">
-    <h2 class=" mb-5 excellence-title " style="color:#000">
+    <h2 class=" mb-5 excellence-title " style="color:#000" data-aos="fade-up" data-aos-duration="1500">
       Unlock <span style="color:#faac37;">Unmatched</span> Excellence
     </h2>
 
-    <div class="row g-4 excellence-cards">
+    <div class="row g-4 excellence-cards" >
       
       <div class="col-md-4">
-        <div class="excellence-card " style="color:#000">
+        <div class="excellence-card " style="color:#000" data-aos="fade-up" data-aos-duration="2000">
           <!-- <i class="fa-regular fa-square fa-2x mb-3" style="color:#faac37;"></i> -->
           <img src="https://intelligentbee.com/build/images/neutral-icon-1.svg" height="30px" width="30px"> 
-          <h5>Tailored Solutions</h5>
+          <h5 >Tailored Solutions</h5>
           <p><b>Customized for Your Sector</b><br>
             Our services are a snug fit, whether you’re scaling e-commerce platforms, innovating in healthcare, or leading fintech transformations. We’re the software development company that understands your unique needs.
           </p>
@@ -418,7 +416,7 @@
       </div>
 
       <div class="col-md-4">
-        <div class="excellence-card">
+        <div class="excellence-card" data-aos="fade-up" data-aos-duration="2000">
          <img src="https://intelligentbee.com/build/images/neutral-icon-2.svg" height="30px" width="30px"> 
           <!-- <i class="fa-regular fa-triangle-exclamation fa-2x mb-3" style="color:#faac37;"></i> -->
           <h5>Dedicated Account Managers</h5>
@@ -429,7 +427,7 @@
       </div>
 
       <div class="col-md-4">
-        <div class="excellence-card">
+        <div class="excellence-card" data-aos="fade-up" data-aos-duration="2000">
         <img src="https://intelligentbee.com/build/images/neutral-icon-3.svg" height="30px" width="30px"> 
           <!-- <i class="fa-regular fa-circle fa-2x mb-3" style="color:#faac37;"></i> -->
           <h5>Data Security & Compliance</h5>
@@ -440,7 +438,7 @@
       </div>
       
       <div class="col-md-4">
-        <div class="excellence-card">
+        <div class="excellence-card" data-aos="fade-up" data-aos-duration="2500">
         <img src="https://intelligentbee.com/build/images/neutral-icon-4.svg" height="30px" width="30px"> 
           <!-- <i class="fa-regular fa-circle fa-2x mb-3" style="color:#faac37;"></i> -->
           <h5>Real-time Analytics & Reports</h5>
@@ -454,7 +452,7 @@
 
       
       <div class="col-md-4">
-        <div class="excellence-card">
+        <div class="excellence-card" data-aos="fade-up" data-aos-duration="2500">
          <img src="https://intelligentbee.com/build/images/neutral-icon-5.svg" height="30px" width="30px"> 
           <!-- <i class="fa-regular fa-circle fa-2x mb-3" style="color:#faac37;"></i> -->
           <h5>Integration with Existing Systems</h5>
@@ -467,7 +465,7 @@
 
       
       <div class="col-md-4">
-        <div class="excellence-card">
+        <div class="excellence-card" data-aos="fade-up" data-aos-duration="2500">
          <img src="https://intelligentbee.com/build/images/neutral-icon-6.svg" height="30px" width="30px"> 
           <!-- <i class="fa-regular fa-circle fa-2x mb-3" style="color:#faac37;"></i> -->
           <h5>Multi-Channel Support</h5>
@@ -479,7 +477,7 @@
 
       
       <div class="col-md-4">
-        <div class="excellence-card">
+        <div class="excellence-card" data-aos="fade-up" data-aos-duration="3000">
          <img src="https://intelligentbee.com/build/images/neutral-icon-7.svg" height="30px" width="30px"> 
           <!-- <i class="fa-regular fa-circle fa-2x mb-3" style="color:#faac37;"></i> -->
           <h5>Continuous Improvement</h5>
@@ -492,7 +490,7 @@
 
       
       <div class="col-md-4">
-        <div class="excellence-card">
+        <div class="excellence-card" data-aos="fade-up" data-aos-duration="3000">
          <img src="https://intelligentbee.com/build/images/neutral-icon-8.svg" height="30px" width="30px"> 
           <!-- <i class="fa-regular fa-circle fa-2x mb-3" style="color:#faac37;"></i> -->
           <h5>Language & Cultural Adaptation</h5>
@@ -505,7 +503,7 @@
 
       
       <div class="col-md-4">
-        <div class="excellence-card">
+        <div class="excellence-card" data-aos="fade-up" data-aos-duration="3000">
         <img src="https://intelligentbee.com/build/images/neutral-icon-9.svg" height="30px" width="30px"> 
           <!-- <i class="fa-regular fa-circle fa-2x mb-3" style="color:#faac37;"></i> -->
           <h5>Training & Onboarding</h5>
@@ -523,43 +521,22 @@
 
     </div>
   </div>
-</section>
 
-<style>
-  
+  <style>
   .excellence-card {
     background: #fffefe;
     color: #000;
     border: 1px solid #e0dede;
     border-radius: 10px;
-    padding: 24px;
-    padding-bottom: 20px;
+    padding: 24px 24px 20px;
     text-align: left;
     height: 100%;
     margin-bottom: 150px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-
-    /* Animation setup */
-    opacity: 0;
-    transform: translateY(100px) scale(0.95);
-    transition: transform 0.6s ease, opacity 0.6s ease;
-  }
-
-  .excellence-card.in-view {
-    opacity: 1;
-    transform: translateY(0) scale(1);
   }
 
   .excellence-title {
     font-size: 45px;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.6s ease;
-  }
-
-  .excellence-title.in-view {
-    opacity: 1;
-    transform: translateY(0);
   }
 
   .excellence-card h5 {
@@ -570,11 +547,9 @@
   }
 
   .excellence-card p {
-  
     font-size: 19px;
     font-weight: 350;
-padding: auto;
-font-family:sans-serif;
+    font-family: sans-serif;
     color: #070707;
     line-height: 1.3;
     margin-top: 20px;
@@ -582,22 +557,9 @@ font-family:sans-serif;
   }
 </style>
 
-<script>
+</section>
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("in-view");
-      } else {
-        entry.target.classList.remove("in-view"); // reset for repeat
-      }
-    });
-  }, { threshold: 0.2 });
 
-  document.querySelectorAll('.excellence-card, .excellence-title').forEach(el => {
-    observer.observe(el);
-  });
-</script>
                                         <!-- Who We Are Section -->
 <section class="who-we-are py-4">
   <div class="container">
@@ -740,7 +702,79 @@ font-family:sans-serif;
 </section>
 
 
-<style>
+
+<section class="services-list" data-aos="fade-up">
+  <div class="container-fluid">
+    <div class="wrapper">
+      <div class="service-block" data-aos="fade-up" data-aos-duration="1000">
+        <h6>Customer Support Services</h6>
+        <ul>
+          <li><a href="#">Outsourcing customer support</a></li>
+          <li><a href="#">E-commerce Customer Support</a></li>
+          <li><a href="#">Technical Support</a></li>
+          <li><a href="#">Customer Support for Healthcare</a></li>
+          <li><a href="#">FinTech Customer Service</a></li>
+          <li><a href="#">SaaS Customer Support</a></li>
+        </ul>
+      </div>
+
+      <div class="service-block" data-aos="fade-up" data-aos-duration="1500">
+        <h6>BPO Services</h6>
+        <ul>
+          <li><a href="#">Back Office Outsourcing</a></li>
+          <li><a href="#">Data Entry Outsourcing</a></li>
+          <li><a href="#">Data Processing Services</a></li>
+          <li><a href="#">Image Data Entry</a></li>
+          <li><a href="#">Healthcare BPO</a></li>
+        </ul>
+      </div>
+
+      <div class="service-block" data-aos="fade-up" data-aos-duration="2000">
+        <h6>Omnichannel</h6>
+        <ul>
+          <li><a href="#">Live Chat</a></li>
+          <li><a href="#">Email Support</a></li>
+          <li><a href="#">Phone Answering</a></li>
+          <li><a href="#">Social Media Support</a></li>
+        </ul>
+      </div>
+
+      <div class="service-block" data-aos="fade-up" data-aos-duration="2500">
+        <h6>Development Services</h6>
+        <ul>
+          <li><a href="#">Custom Software Development</a></li>
+          <li><a href="#">Front-end Development</a></li>
+          <li><a href="#">Back-end Development</a></li>
+          <li><a href="#">iOS App Development</a></li>
+          <li><a href="#">Android App Development</a></li>
+          <li><a href="#">Custom AI Development</a></li>
+        </ul>
+      </div>
+
+      <div class="service-block" data-aos="fade-up" data-aos-duration="3000">
+        <h6>Technologies</h6>
+        <ul>
+          <li><a href="#">Node.js</a></li>
+          <li><a href="#">Golang</a></li>
+          <li><a href="#">PHP</a></li>
+          <li><a href="#">Laravel</a></li>
+          <li><a href="#">Flutter</a></li>
+          <li><a href="#">React JS</a></li>
+        </ul>
+      </div>
+
+      <div class="service-block" data-aos="fade-up" data-aos-duration="3000">
+        <h6>Industries</h6>
+        <ul>
+          <li><a href="#">Ecommerce</a></li>
+          <li><a href="#">Healthcare</a></li>
+          <li><a href="#">Tech Companies</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <style>
   .services-list {
     background: #141414;
     color: #fcfcfc;
@@ -820,84 +854,14 @@ font-family:sans-serif;
   }
 </style>
 
-<section class="services-list">
-  <div class="container-fluid">
-    <div class="wrapper">
-      <div class="service-block">
-        <h6>Customer Support Services</h6>
-        <ul>
-          <li><a href="#">Outsourcing customer support</a></li>
-          <li><a href="#">E-commerce Customer Support</a></li>
-          <li><a href="#">Technical Support</a></li>
-          <li><a href="#">Customer Support for Healthcare</a></li>
-          <li><a href="#">FinTech Customer Service</a></li>
-          <li><a href="#">SaaS Customer Support</a></li>
-        </ul>
-      </div>
-
-      <div class="service-block">
-        <h6>BPO Services</h6>
-        <ul>
-          <li><a href="#">Back Office Outsourcing</a></li>
-          <li><a href="#">Data Entry Outsourcing</a></li>
-          <li><a href="#">Data Processing Services</a></li>
-          <li><a href="#">Image Data Entry</a></li>
-          <li><a href="#">Healthcare BPO</a></li>
-        </ul>
-      </div>
-
-      <div class="service-block">
-        <h6>Omnichannel</h6>
-        <ul>
-          <li><a href="#">Live Chat</a></li>
-          <li><a href="#">Email Support</a></li>
-          <li><a href="#">Phone Answering</a></li>
-          <li><a href="#">Social Media Support</a></li>
-        </ul>
-      </div>
-
-      <div class="service-block">
-        <h6>Development Services</h6>
-        <ul>
-          <li><a href="#">Custom Software Development</a></li>
-          <li><a href="#">Front-end Development</a></li>
-          <li><a href="#">Back-end Development</a></li>
-          <li><a href="#">iOS App Development</a></li>
-          <li><a href="#">Android App Development</a></li>
-          <li><a href="#">Custom AI Development</a></li>
-        </ul>
-      </div>
-
-      <div class="service-block">
-        <h6>Technologies</h6>
-        <ul>
-          <li><a href="#">Node.js</a></li>
-          <li><a href="#">Golang</a></li>
-          <li><a href="#">PHP</a></li>
-          <li><a href="#">Laravel</a></li>
-          <li><a href="#">Flutter</a></li>
-          <li><a href="#">React JS</a></li>
-        </ul>
-      </div>
-
-      <div class="service-block">
-        <h6>Industries</h6>
-        <ul>
-          <li><a href="#">Ecommerce</a></li>
-          <li><a href="#">Healthcare</a></li>
-          <li><a href="#">Tech Companies</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- <                 Main Points Section -->
-<footer class="footer">
+<footer class="footer"  >
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-12">
-        <div class="footer-logo">
+      <div class="col-lg-8 col-md-12" data-aos="fade-up" data-aos-duration="1000">
+        <div class="footer-logo" >
           <img src="https://intelligentbee.com/build/images/intelligentbee-logo.svg" alt="Footer Logo" />
         </div>
         <p class="footer-desc">
@@ -906,7 +870,7 @@ font-family:sans-serif;
           Backed by more than 15 years of expertise and fueled by a passionate team of developers and support experts, we embody the values of being Hungry, Happy, Honest, and Humble, striving to enable businesses to focus on growth while we ensure seamless technical operations and long-term partnership commitment.
         </p>
 
-        <div class="follow-title-wrapper">
+        <div class="follow-title-wrapper" data-aos="fade-up" data-aos-duration="1000">
           <h5 class="follow-title">Follow Us:</h5>
           <div class="social-links g-6">
             <a  style="text-decoration: none;" href="#" ><i class="fa-brands fa-facebook-f"></i></a>
@@ -915,13 +879,13 @@ font-family:sans-serif;
         </div>
 
     
-        <div class="footer-contact">
+        <div class="footer-contact" data-aos="fade-up" data-aos-duration="1000">
           <p><i class="fa-solid fa-phone-volume"></i> 0319-3276826</p>
           <p><i class="fa-solid fa-envelope"></i> info@outsourceitprojects.com</p>
         </div>
       </div>
 
-      <div class="col-lg-2 col-md-6 mb-4">
+      <div class="col-lg-2 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1000">
         <h5 class="footer-title">Company</h5>
         <ul class="footer-links">
           <li><a href="#">Home</a></li>
@@ -932,7 +896,7 @@ font-family:sans-serif;
         </ul>
       </div>
 
-      <div class="col-lg-2 col-md-6 mb-4">
+      <div class="col-lg-2 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1000">
         <h5 class="footer-title">Services</h5>
         <ul class="footer-links">
           <li><a href="#">Virtual Resources</a></li>
@@ -946,7 +910,7 @@ font-family:sans-serif;
   
     <div class="row">
       <div class="col-12">
-        <div class="newsletter">
+        <div class="newsletter" >
           <p class="signup-text"><strong> <b>Sign up for free weekly Human-First CX insights!</b></strong></p>
           <form method="post" class="newsletter-form">
             <input type="email" placeholder="Enter your email" required />
@@ -956,7 +920,7 @@ font-family:sans-serif;
       </div>
     </div>
 
-    <div class="footer-bottom">
+    <div class="footer-bottom" data-aos="fade-up" data-aos-duration="1000">
       <img src="https://images.dmca.com/Badges/dmca_protected_16_120.png" alt="DMCA" class="dmca-badge" />
       <p>©2025. All rights reserved. Outsource IT Projects. Terms & Condition Applied</p>
     </div>
